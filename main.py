@@ -9,7 +9,7 @@ st.set_page_config(
 st.title("Modgut's Elderly Project")
 st.write('Filter data to find healthy people with following criteria:')
 
-df = pd.read_csv('data.csv')
+df = pd.read_excel('data.xlsx')
 col_list = df.columns.to_list()
 
 for i in range(len(col_list)):
