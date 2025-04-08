@@ -19,9 +19,9 @@ BMI_list = st.multiselect('Select BMI Group:', ('underweight','normal','overweig
 #st.write('You criteria:', BMI_group)
 
 TMAO_range = st.slider("Select Normal Range of TMAO:", df['ผล plasma TMAO (umol/l)'].min(), df['ผล plasma TMAO (umol/l)'].max(), (0.0, 6.0))
-st.write('TMAO:', TMAO_range)
 st.write('TMAO:', TMAO_range[0])
+st.write('TMAO:', TMAO_range[1])
 
 st.write('Number of persons:', df[(df['BMI_group'].isin(BMI_list))
-                                  & (df['ผล plasma TMAO (umol/l)'].isin(TMAO_range))
+                                  & (df['ผล plasma TMAO (umol/l)'].isin(range(int(TMAO_range[0]),int(TMAO_range[1])+1)))
                                   ].shape[0])
