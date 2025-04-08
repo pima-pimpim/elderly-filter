@@ -22,5 +22,5 @@ TMAO_range = st.slider("Select Normal Range of TMAO:", df['ผล plasma TMAO (u
 
 
 st.write('Number of persons:', df[(df['BMI_group'].isin(BMI_list))
-                                  & (int(TMAO_range[0]) <= df['ผล plasma TMAO (umol/l)'] <= (int(TMAO_range[1])+1))
+                                  & ((int(TMAO_range[0]) <= df['ผล plasma TMAO (umol/l)'] <= (int(TMAO_range[1])+1)))
                                   ].shape[0])
