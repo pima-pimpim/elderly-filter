@@ -8,12 +8,11 @@ st.set_page_config(
 
 st.title("Modgut's Elderly Project")
 st.write('Filter data to find healthy people with following criteria:')
+st.markdown('Filter data to find healthy people with following criteria:')
 
-region = pd.read_csv('region_personal.csv')
+region = pd.read_csv('data.csv')
 
-option = st.selectbox(
-    'Please select a criteria',
-    ('gender', 'age_group', 'bmi_group', 'region'))
+option = st.selectbox()
 
 st.write('You criteria:', option)
 
