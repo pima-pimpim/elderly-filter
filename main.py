@@ -10,10 +10,10 @@ st.title("Modgut's Elderly Project")
 st.write('Filter data to find healthy people with following criteria:')
 
 df = pd.read_csv('data.csv')
-#col_list = df.columns.to_list()
+col_list = df.columns.to_list()
 
-#for i in range(len(col_list)):
-#    st.write(col_list[i], "-- Min:", df[col_list[i]].min(), "Max:", df[col_list[i]].max())
+for i in range(len(col_list)):
+    st.write(col_list[i], "-- Min:", df[col_list[i]].min(), "Max:", df[col_list[i]].max())
 
 #start_time = st.slider(
 #    "When do you start?",
