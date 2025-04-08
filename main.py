@@ -10,26 +10,16 @@ st.title("Modgut's Elderly Project")
 st.write('Filter data to find healthy people with following criteria:')
 
 df = pd.read_csv('data.csv')
-col_list = df.columns.to_list()
 
-for i in range(len(col_list)):
-    st.write(col_list[i], "-- Min:", df[col_list[i]].min(), "Max:", df[col_list[i]].max())
+#'Alpha Fetoprotein (AFP) IU/ml','FBS (mg/dL)','HbA1C %','Cholesterol (total)','HDL-Cholesterol','Triglyceride (lipid-TG)','LDL-Cholesterol (direct)','Globulin (Total protein-albumin)','Total protein','Albumin','Bilirubin (Total)','Bilirubin (Direct)','SGOT (AST)','SGPT (ALT)','Alkaline Phosphatase (ALP)','red cell count','Hemoglobin(HGB)','Hematocrit (HCT)','Platelets counts','White cell count','Neutrophils %','Prothrombin Time (sec)','Normal Plasma (sec)','INR','Creatinine (mg/dL) Blood','Thai eGFR (mL/min/1.73m2) Blood ','uric acid','ยาไขมัน','ยาความดัน','ยาเบาหวาน','อื่นๆ','CAP (dB/m)','CAP_group','TE (kPa)','TE_group','Coronary Calcium Scan (CAC)','CAC_group','LMA','LAD','LCX','RCA'
 
-#start_time = st.slider(
-#    "When do you start?",
-#    value=datetime(2020, 1, 1, 9, 30),
-#    format="MM/DD/YY - hh:mm",
-#)
-#st.write("Start time:", start_time)
+BMI_group = st.multiselect('Select BMI Group:', ('underweight','normal','overweight','obese','severe obese'))
+st.write('BMI:', BMI_group)
 
-#show_btn = st.button("Display!")
-#if show_btn:
-#for i in ('gender', 'age_group', 'bmi_group', 'region'):
-#    if i in option:
-#        # Create distplot with custom bin_size
-#        fig = px.pie(region[option].value_counts(), values=region[option].value_counts().values, names=region[option].value_counts().index)
-#        fig.update_traces(hoverinfo='label+value', textinfo='label+value+percent')
-#
-#        # Plot!
-#        st.plotly_chart(fig)
+#BMI_group = st.selectbox('Select BMI Group:', ('underweight','normal','overweight','obese','severe obese'))
+#st.write('You criteria:', BMI_group)
 
+TMAO_group = st.slider("Select Normal Range of TMAO:", df['ผล plasma TMAO (umol/l)'].min(), df['ผล plasma TMAO (umol/l)'].max(), (0.0, 6.0))
+st.write('TMAO:', TMAO_group)
+
+st.write('Number of persons:', df.shape[0])
