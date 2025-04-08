@@ -22,4 +22,4 @@ st.write('BMI:', BMI_group)
 TMAO_group = st.slider("Select Normal Range of TMAO:", df['ผล plasma TMAO (umol/l)'].min(), df['ผล plasma TMAO (umol/l)'].max(), (0.0, 6.0))
 st.write('TMAO:', TMAO_group)
 
-st.write('Number of persons:', df.shape[0])
+st.write('Number of persons:', df[df['BMI_group'].isin(BMI_group)].shape[0])
