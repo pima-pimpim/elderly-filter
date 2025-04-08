@@ -147,7 +147,29 @@ st.subheader('Number of healthy people = ' + str(df[(df['BMI_group'].isin(BMI_li
                                   (((Uric_range[0] <= df['uric acid']) & (df['uric acid'] <= Uric_range[1]))
                                   | (df['uric acid'].isnull())) &
 
-                                  
+                                  (((LCX_range[0] <= df['LCX']) & (df['LCX'] <= LCX_range[1]))
+                                  | (df['LCX'].isnull())) &
+
+                                  (((Albumin_range[0] <= df['Albumin']) & (df['Albumin'] <= Albumin_range[1]))
+                                  | (df['Albumin'].isnull())) &
+
+                                  (((AST_range[0] <= df['SGOT (AST)']) & (df['SGOT (AST)'] <= AST_range[1]))
+                                  | (df['SGOT (AST)'].isnull())) &
+
+                                  (((Red_range[0] <= df['red cell count']) & (df['red cell count'] <= Red_range[1]))
+                                  | (df['red cell count'].isnull())) &
+
+                                  (((Platelets_range[0] <= df['Platelets counts']) & (df['Platelets counts'] <= Platelets_range[1]))
+                                  | (df['Platelets counts'].isnull())) &
+
+                                  (((Creatinine_range[0] <= df['Creatinine (mg/dL) Blood']) & (df['Creatinine (mg/dL) Blood'] <= Creatinine_range[1]))
+                                  | (df['Creatinine (mg/dL) Blood'].isnull())) &
+
+                                  (((LMA_range[0] <= df['LMA']) & (df['LMA'] <= LMA_range[1]))
+                                  | (df['LMA'].isnull())) &
+
+                                  (((RCA_range[0] <= df['RCA']) & (df['RCA'] <= RCA_range[1]))
+                                  | (df['RCA'].isnull())) &
 
                                   (df['take_pill'] == take_pill)
 
