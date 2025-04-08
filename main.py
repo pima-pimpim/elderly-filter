@@ -83,6 +83,6 @@ st.subheader('Number of healthy people = ' + str(df[(df['BMI_group'].isin(BMI_li
                                   (((Triglyceride_range[0] <= df['Triglyceride (lipid-TG)']) & (df['Triglyceride (lipid-TG)'] <= Triglyceride_range[1]))
                                   | (df['Triglyceride (lipid-TG)'].isnull())) &
 
-                                  (df[df['take_pill'] == take_pill])
+                                  (df['take_pill'] == take_pill)
 
                                   ].shape[0]))
