@@ -67,7 +67,7 @@ with col3:
     LMA_range = st.slider("Select Normal Range of LMA:", 0, int(df['LMA'].max())+1, (int(df['LMA'].min()), int(df['LMA'].max())+1))
     RCA_range = st.slider("Select Normal Range of RCA:", 0, int(df['RCA'].max())+1, (int(df['RCA'].min()), int(df['RCA'].max())+1))
 
-st.subheader('Number of healthy people = ' + str(df[(df['BMI_group'].isin(BMI_list)) & 
+result = df[(df['BMI_group'].isin(BMI_list)) & 
                                                     
                                   (((TMAO_range[0] <= df['ผล plasma TMAO (umol/l)']) & (df['ผล plasma TMAO (umol/l)'] <= TMAO_range[1]))
                                   | (df['ผล plasma TMAO (umol/l)'].isnull())) &
@@ -173,4 +173,21 @@ st.subheader('Number of healthy people = ' + str(df[(df['BMI_group'].isin(BMI_li
 
                                   (df['take_pill'] == take_pill)
 
-                                  ].shape[0]))
+                                  ]
+
+st.subheader('Number of healthy people = ' + str(result.shape[0]))
+
+
+if st.button("Show code number"):
+    c1, s1, c2, s2, c3, s3, c4, s4, c5 = st.columns([1, 0.2, 1, 0.2, 1, 0.2, 1, 0.2, 1])
+    for i in range(len(result['code'].to_list())):
+        if i%5 == 1:
+            c1.write(result['code'].to_list()[i])
+        elif i%5 == 2:
+            c2.write(result['code'].to_list()[i])
+        elif i%5 == 3:
+            c3.write(result['code'].to_list()[i])
+        elif i%5 == 4:
+            c4.write(result['code'].to_list()[i])
+        else:
+            c5.write(result['code'].to_list()[i])
