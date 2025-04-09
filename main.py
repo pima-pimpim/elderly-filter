@@ -181,13 +181,13 @@ st.subheader('Number of healthy people = ' + str(result.shape[0]))
 if st.button("Show code number"):
     c1, s1, c2, s2, c3, s3, c4, s4, c5 = st.columns([1, 0.2, 1, 0.2, 1, 0.2, 1, 0.2, 1])
     for i in range(len(result['code'].to_list())):
-        if i%5 == 1:
+        if i%5 == 0:
             c1.write(str(i+1) + "." + str(result['code'].to_list()[i]))
-        elif i%5 == 2:
+        elif i%5 == 1:
             c2.write(str(i+1) + "." + str(result['code'].to_list()[i]))
-        elif i%5 == 3:
+        elif i%5 == 2:
             c3.write(str(i+1) + "." + str(result['code'].to_list()[i]))
-        elif i%5 == 4:
+        elif i%5 == 3:
             c4.write(str(i+1) + "." + str(result['code'].to_list()[i]))
         else:
             c5.write(str(i+1) + "." + str(result['code'].to_list()[i]))
