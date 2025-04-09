@@ -182,12 +182,12 @@ if st.button("Show code number"):
     c1, s1, c2, s2, c3, s3, c4, s4, c5 = st.columns([1, 0.2, 1, 0.2, 1, 0.2, 1, 0.2, 1])
     for i in range(len(result['code'].to_list())):
         if i%5 == 1:
-            c1.write(i+1, ".", result['code'].to_list()[i])
+            c1.write(str(i+1) + "." + str(result['code'].to_list()[i]))
         elif i%5 == 2:
-            c2.write(i+1, ".", result['code'].to_list()[i])
+            c2.write(str(i+1) + "." + str(result['code'].to_list()[i]))
         elif i%5 == 3:
-            c3.write(i+1, ".", result['code'].to_list()[i])
+            c3.write(str(i+1) + "." + str(result['code'].to_list()[i]))
         elif i%5 == 4:
-            c4.write(i+1, ".", result['code'].to_list()[i])
+            c4.write(str(i+1) + "." + str(result['code'].to_list()[i]))
         else:
-            c5.write(i+1, ".", result['code'].to_list()[i])
+            c5.write(str(i+1) + "." + str(result['code'].to_list()[i]))
