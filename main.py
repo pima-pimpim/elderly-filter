@@ -175,7 +175,7 @@ result = df[(df['BMI_group'].isin(BMI_list)) &
 
                                   ]
 
-st.subheader('Number of healthy people = ' + str(result.shape[0]))
+st.subheader('Number of people = ' + str(result.shape[0]))
 
 
 if st.button("Show code number"):
