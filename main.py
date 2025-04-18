@@ -33,9 +33,7 @@ with col1:
     Bilirubin_T_range = st.slider("Select Normal Range of Bilirubin (Total):", 0, int(df['Bilirubin (Total)'].max())+1, (0,1))
     ALT_range = st.slider("Select Normal Range of SGPT (ALT):", 0, int(df['SGPT (ALT)'].max())+1, (0,50))
     #HGB_range = st.slider("Select Normal Range of Hemoglobin(HGB):", 0, int(df['Hemoglobin(HGB)'].max())+1, (int(df['Hemoglobin(HGB)'].min())-1, int(df['Hemoglobin(HGB)'].max())+1))
-    White_range = st.slider("Select Normal Range of White Cell Count:", 0, int(df['White cell count'].max())+1, (4,11))
     #Plasma_range = st.slider("Select Normal Range of Normal Plasma (sec):", 0, int(df['Normal Plasma (sec)'].max())+1, (int(df['Normal Plasma (sec)'].min()), int(df['Normal Plasma (sec)'].max())+1))
-    eGFR_range = st.slider("Select Normal Range of Thai eGFR (mL/min/1.73m2) Blood:", 0, int(df['Thai eGFR (mL/min/1.73m2) Blood '].max())+1, (60, 120))
     #LAD_range = st.slider("Select Normal Range of LAD:", 0, int(df['LAD'].max())+1, (int(df['LAD'].min()), int(df['LAD'].max())+1))
     take_pill = st.selectbox('Take Pill:', ("No", "Yes"))
 
@@ -46,6 +44,9 @@ with col2:
     LDL_range = st.slider("Select Normal Range of LDL-Cholesterol:", 0, int(df['LDL-Cholesterol (direct)'].max())+1, (0, 130))
     #Protein_range = st.slider("Select Normal Range of Total Protein:", 0, int(df['Total protein'].max())+1, (int(df['Total protein'].min()), int(df['Total protein'].max())+1))
     Bilirubin_D_range = st.slider("Select Normal Range of Bilirubin (Direct):", 0, int(df['Bilirubin (Direct)'].max())+1, (0,1))
+    White_range = st.slider("Select Normal Range of White Cell Count:", 0, int(df['White cell count'].max())+1, (4,11))
+    eGFR_range = st.slider("Select Normal Range of Thai eGFR (mL/min/1.73m2) Blood:", 0, int(df['Thai eGFR (mL/min/1.73m2) Blood '].max())+1, (60, 120))
+    Creatinine_range = st.slider("Select Normal Range of Creatinine (mg/dL) Blood:", 0, int(df['Creatinine (mg/dL) Blood'].max())+1, (0,2))
     #ALP_range = st.slider("Select Normal Range of Alkaline Phosphatase (ALP):", 0, int(df['Alkaline Phosphatase (ALP)'].max())+1, (int(df['Alkaline Phosphatase (ALP)'].min())-1, int(df['Alkaline Phosphatase (ALP)'].max())+1))
     #HCT_range = st.slider("Select Normal Range of Hematocrit (HCT):", 0, int(df['Hematocrit (HCT)'].max())+1, (int(df['Hematocrit (HCT)'].min())-1, int(df['Hematocrit (HCT)'].max())+1))
     #Neutrophils_range = st.slider("Select Normal Range of Neutrophils (%):", 0, int(df['Neutrophils %'].max())+1, (int(df['Neutrophils %'].min())-1, int(df['Neutrophils %'].max())+1))
@@ -63,7 +64,6 @@ with col3:
     Red_range = st.slider("Select Normal Range of Red Cell Count:", 0, int(df['red cell count'].max())+1, (0,6))
     Platelets_range = st.slider("Select Normal Range of Platelets Counts:", 0, int(df['Platelets counts'].max())+1, (150,int(df['Platelets counts'].max())+1))
     #Prothrombin_range = st.slider("Select Normal Range of Prothrombin Time (sec):", 0, int(df['Prothrombin Time (sec)'].max())+1, (int(df['Prothrombin Time (sec)'].min())-1, int(df['Prothrombin Time (sec)'].max())+1))
-    Creatinine_range = st.slider("Select Normal Range of Creatinine (mg/dL) Blood:", 0, int(df['Creatinine (mg/dL) Blood'].max())+1, (0,2))
     #LMA_range = st.slider("Select Normal Range of LMA:", 0, int(df['LMA'].max())+1, (int(df['LMA'].min()), int(df['LMA'].max())+1))
     #RCA_range = st.slider("Select Normal Range of RCA:", 0, int(df['RCA'].max())+1, (int(df['RCA'].min()), int(df['RCA'].max())+1))
 
